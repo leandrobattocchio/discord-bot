@@ -28,7 +28,7 @@ module.exports = {
       Results.forEach(Post => {
         gifs.push(Post)
       })
-      await interaction.reply(gifs[Math.floor(Math.random() * 25)].url)
+      await interaction.reply(gifs[Math.floor(Math.random() * gifs.length)].url)
     }).catch(console.error)
   }
 }
