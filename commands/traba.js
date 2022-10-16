@@ -14,9 +14,6 @@ module.exports = {
       .setImage('attachment://traba.gif').setTimestamp()
     const user = interaction.options.getUser('user')
 
-    setTimeout(async () => {
-      await interaction.reply(`A <@${user.id}> le gustan los trabas! 👨`)
-    }, 1000)
-    interaction.channel.send({ embeds: [embed], files: ['./gifs/traba.gif'] })
+    interaction.reply({ content: `A <@${user.id}> le gustan los trabas! 👨`, embeds: [embed], files: ['./gifs/traba.gif'] })
   }
 }
