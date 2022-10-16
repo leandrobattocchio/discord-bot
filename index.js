@@ -54,7 +54,6 @@ client.on('interactionCreate', async interaction => {
 })
 
 client.on('messageCreate', async interaction => {
-  console.log(interaction.author.id)
   if (interaction.content === 'm!start') {
     deployCommands(interaction)
   } else if (interaction.content === 'm!help') {
