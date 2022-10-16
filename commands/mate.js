@@ -18,7 +18,9 @@ module.exports = {
     const user = interaction.options.getUser('user')
 
     if (user && user.username !== interaction.user.username) {
-      await interaction.reply(`<@${user.id}>, ${interaction.user.username} te cebo uno! 🐈`)
+      setTimeout(async () => {
+        await interaction.reply(`<@${user.id}>, ${interaction.user.username} te cebo uno! 🐈`)
+      }, 300)
       interaction.channel.send({ embeds: [embed], files: [`./gifs/${gif}.gif`] })
     } else {
       await interaction.reply({ embeds: [embed], files: [`./gifs/${gif}.gif`] })

@@ -4,6 +4,7 @@ const { Client, GatewayIntentBits, Collection } = require('discord.js')
 require('dotenv').config()
 const deployCommands = require('./deploy-commands')
 const createEmbed = require('./embed')
+const boludeces = require('./variables/boludeces')
 
 const client = new Client({
   intents: [
@@ -49,15 +50,18 @@ client.on('interactionCreate', async interaction => {
 
 client.on('interactionCreate', async interaction => {
   if (!interaction.isButton()) return
-  await interaction.reply(`${interaction.user.username}, juga con esta de nuevo si queres pete`)
+  await interaction.reply(`${interaction.user.username}, juga con esta si queres pete`)
 })
 
 client.on('messageCreate', async interaction => {
+  console.log(interaction.author.id)
   if (interaction.content === 'm!start') {
     deployCommands(interaction)
   } else if (interaction.content === 'm!help') {
     const embed = createEmbed()
     await interaction.reply({ embeds: [embed], files: ['./images/mate.jpg', './images/dragonite.jpg', './images/shinji.jpg'] })
+  } else if (interaction.author.id === '493826525112565770') {
+    if (boludeces()) await interaction.reply('Deja de decir boludeces juank')
   }
 })
 

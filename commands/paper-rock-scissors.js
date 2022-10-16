@@ -30,9 +30,11 @@ module.exports = {
     const row = new ActionRowBuilder()
       .addComponents(
         new ButtonBuilder()
-          .setCustomId('play-again')
           .setLabel('Play again!')
+          .setCustomId('play_again_clicked')
+          .setDisabled(true)
           .setStyle(ButtonStyle.Primary)
+
       )
 
     if (userChooise === computer) {
