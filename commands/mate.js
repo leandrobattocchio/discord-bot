@@ -17,8 +17,8 @@ module.exports = {
       .setImage(`attachment://${gif}.gif`).setTimestamp()
     const user = interaction.options.getUser('user')
 
-    if (user) {
-      await interaction.reply(`<@${user.id}>`)
+    if (user && user.username !== interaction.user.username) {
+      await interaction.reply(`<@${user.id}>, ${interaction.user.username} te cebo uno! 🐈`)
       interaction.channel.send({ embeds: [embed], files: [`./gifs/${gif}.gif`] })
     } else {
       await interaction.reply({ embeds: [embed], files: [`./gifs/${gif}.gif`] })
