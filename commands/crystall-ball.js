@@ -1,10 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js')
-const respuestas = {
-  0: 'Si',
-  1: 'No',
-  2: 'Tal vez',
-  3: 'Me matas pa, no soy de aca'
-}
+const respuestas = ['Si', 'No', 'Tal vez', 'Me mataste pa, no soy de aca']
 
 module.exports = {
   data: new SlashCommandBuilder()
