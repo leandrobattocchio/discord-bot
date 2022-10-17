@@ -4,7 +4,7 @@ const { Client, GatewayIntentBits, Collection } = require('discord.js')
 require('dotenv').config()
 const deployCommands = require('./deploy-commands')
 const createEmbed = require('./embed')
-const boludeces = require('./variables/boludeces')
+const { boludo } = require('./variables/boludeces')
 
 const client = new Client({
   intents: [
@@ -60,7 +60,7 @@ client.on('messageCreate', async interaction => {
     const embed = createEmbed()
     await interaction.reply({ embeds: [embed], files: ['./images/mate.jpg', './images/dragonite.jpg', './images/shinji.jpg'] })
   } else if (interaction.author.id === '493826525112565770') {
-    if (boludeces()) await interaction.reply('Deja de decir boludeces juank')
+    if (boludo()) await interaction.reply('Deja de decir boludeces juank')
   }
 })
 
